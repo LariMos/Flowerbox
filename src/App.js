@@ -2,7 +2,6 @@ import './App.css';
 import data from './data/data.js'
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import CardContainer from './components/FlowerCard';
 import LargeImage from './components/LargeImage';
 import FlowerCard from './components/FlowerCard';
 
