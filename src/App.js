@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import data from './data/data.js'
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import CardContainer from './components/FlowerCard';
+import LargeImage from './components/LargeImage';
+import FlowerCard from './components/FlowerCard';
 
 function App() {
+
+  //---------------------JAVASCRIPT LOGIC---------------------
+
+  const flowers = data.map((element, index) => {
+    return (
+      <FlowerCard 
+      {...element} 
+      key={index} 
+      />
+    )
+  });
+
+    //---------------------JSX LOGIC---------------------
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Nav />
+        <LargeImage />
+        <div>
+          {flowers}
+        </div>
+        <Footer />
+
     </div>
   );
 }
