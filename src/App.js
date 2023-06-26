@@ -1,33 +1,33 @@
+import logo from './logo.svg';
 import './App.css';
-import data from './data/data.js'
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import './index.css';
+import Nav from './components/Nav.js';
 import LargeImage from './components/LargeImage';
+import Footer from './components/Footer';
 import FlowerCard from './components/FlowerCard';
+import data from './data/data.js';
 
 function App() {
-
-  //---------------------JAVASCRIPT LOGIC---------------------
-
-  const flowers = data.map((element, index) => {
+  const products = data.map((product, index) => {
     return (
-      <FlowerCard 
-      {...element} 
-      key={index} 
-      />
+      <FlowerCard key={index} {...product} />
     )
   });
 
-    //---------------------JSX LOGIC---------------------
   return (
     <div className="App">
+      <div className="nav-bar">
         <Nav />
-        <LargeImage />
-        <div>
-          {flowers}
-        </div>
+      </div>
+      <div className="left"></div>
+      <div className="right"></div>
         <Footer />
-
+        <LargeImage />
+      <div className="content">
+      <div className="product-row">
+          {products}
+        </div>
+      </div>
     </div>
   );
 }
